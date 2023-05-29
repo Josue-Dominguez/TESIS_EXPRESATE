@@ -43,7 +43,7 @@ class Profile(models.Model):
 
     verified = models.CharField(max_length=10, choices=VERIFICATION_OPTIONS, default='unverified')
 
-   # coins
+    followers = models.ManyToManyField(User, blank=True, related_name="followers")
 
     date_created = models.DateField(auto_now_add=True)
 
