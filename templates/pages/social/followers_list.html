@@ -25,17 +25,14 @@
     <div class="bg-white dark:bg-dark-third max-w-full px-4 py-5 border-b rounded-lg mb-2 dark:border-dark-second border-gray-200 sm:px-6">
         
         <h3 class="text-xl leading-6 cursor-default dark:text-dark-txt prose rounded font-bold text-gray-900">
-        {{profile.user.username}}'s' Followers
+        {{profile.user.username}} Amigos
         </h3>
 
         <p class="mt-1 text-sm cursor-default dark:text-dark-txt text-gray-500">
-        People who are following {{profile.user.username}}. Follow this user and see their posts in your feed.
-        Hint: To follow a user visit their <span class="font-bold">Profile page</span> and click <span class="font-bold">Follow</span>
+        Gente que sigue a {{profile.user.username}}. Sigue a este usuario para ver sus publicaciones, agregalo como amigo para interactuar con el
         </p>
     </div>
 
-
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <ul class="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {% for follower in followers %}
         <li class="col-span-1 flex flex-col text-center dark:bg-dark-main bg-white rounded-lg shadow ">

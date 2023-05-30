@@ -51,6 +51,24 @@
                         {% endif %}
                     {% endif %}
 
+                    {% if user.is_authenticated and user != profile.user %}
+                        {% if is_following %}
+                        <form method="POST" action="#" >
+                            {% csrf_token %}
+                            <button type="submit" class="float-right inline-flex justify-center px-4 py-2 border dark:bg-dark-main dark:border-dark-third dark:hover:bg-dark-third dark:text-dark-txt border-blue-500 shadow-sm text-md font-bold rounded-full text-blue-500 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-dark-second focus:ring-blue-500">
+                            Agregar a mis amigos
+                            </button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="#" >
+                            {% csrf_token %}
+                            <button type="submit" class="float-right inline-flex justify-center px-4 py-2 border dark:bg-dark-main dark:border-dark-third dark:hover:bg-dark-third dark:text-dark-txt border-blue-500 shadow-sm text-md font-bold rounded-full text-blue-500 dark:bg-dark-second bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-dark-second focus:ring-blue-500">
+                            Agregar a mis amigos
+                            </button>
+                        </form>
+                        {% endif %}
+                    {% endif %}
+
                     <div x-data="{ open: false }" @keydown.window.escape="open = false" class=" mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
                         <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                             {% if user.is_authenticated and user == profile.user %}
